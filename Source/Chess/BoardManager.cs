@@ -279,7 +279,7 @@ namespace Chess
 
         }
 
-        internal bool IsDeadKing()
+        internal bool IsKingDead()
         {
             return this.komaList.Where((koma) =>
                 koma.Kind == KomaKind.King

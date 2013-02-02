@@ -77,7 +77,7 @@ namespace Chess
                     if (boardManager.CanMove(left, height))
                     {
                         boardManager.SetLocation(left, height);
-                        if (boardManager.IsDeadKing())
+                        if (boardManager.IsKingDead())
                         {
                             MessageBox.Show(boardManager.GetPlayerColor() + "の勝ち");
                         }
