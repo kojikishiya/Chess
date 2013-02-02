@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Chess.Form1" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACAAAAAAAAKAIAASAAAAEAAAIACAAAAAAAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.KomaBase" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAAAABAIBABAABAAAEIAEgIAAAAAQAAgCAEACAAAAgA=</HashCode>
+      <FileName>駒\KomaBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.King" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABAABAAAAAAAgAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>駒\King.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Queen" Collapsed="true">
+    <Position X="2" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABAABAAAAAAAgAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>駒\Queen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.BoardManager" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAQBAAABAAAAAIBAAAAAAACAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>BoardManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Program" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Properties.Resources" Collapsed="true">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAEQCQAAgAABEAAAAQAAAAAAAgQAIBEAAYA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Properties.Settings" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Pawn" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABAABAAAAAAAgAAAAAAQAAAAAAAAAAAAgA=</HashCode>
+      <FileName>駒\Pawn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Knight">
+    <Position X="4.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABAABAAAAAAAgAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>駒\Knight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Bishop">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABAABAAAAAAAgAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>駒\Bishop.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chess.Rook" Collapsed="true">
+    <Position X="1" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABAABAAAAAAAgAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>駒\Rook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Chess.KomaKind" Collapsed="true">
+    <Position X="8.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAEgAAAAAEAAAAQAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ChessEnums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Chess.Color" Collapsed="true">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ChessEnums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Meiryo UI" Size="9" />
+</ClassDiagram>
