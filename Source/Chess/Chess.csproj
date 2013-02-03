@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChessBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChessBoard.Designer.cs">
+      <DependentUpon>ChessBoard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Koma\Bishop.cs" />
     <Compile Include="ChessEnums.cs" />
     <Compile Include="Form1.cs">
