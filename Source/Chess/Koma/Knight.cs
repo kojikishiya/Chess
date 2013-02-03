@@ -45,8 +45,8 @@ namespace Chess
         protected override System.Drawing.Bitmap GetPicture()
         {
             return GetObjectByColor(
-                Properties.Resources._45px_Chess_klt45_svg
-                , Properties.Resources._45px_Chess_kdt45_svg);
+                Properties.Resources._45px_Chess_nlt45_svg
+                , Properties.Resources._45px_Chess_ndt45_svg);
         }
     }
 }
