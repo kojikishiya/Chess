@@ -9,7 +9,7 @@ namespace Chess
     [Serializable]
     class Queen : KomaBase
     {
-        public Queen(Color color, int index)
+        public Queen(PlayerNo color, int index)
             : base(color, index)
         {
 

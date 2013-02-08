@@ -8,7 +8,7 @@ namespace Chess
     [Serializable]
     internal class Rook : KomaBase
     {
-        public Rook(Color color, int index)
+        public Rook(PlayerNo color, int index)
              : base(color, index)
          {
 

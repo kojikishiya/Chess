@@ -12,13 +12,13 @@ namespace Chess
 {
     public partial class Form1 : Form
     {
-        BoardManager boardManager = new BoardManager();
 
         public Form1()
         {
             InitializeComponent();
+            var context =new Context();
+            var board = new ChessBoard(context);
 
-            var board = new ChessBoard(ImageSize.Thirty);
             board.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             Text = "Chess";
             //this.Controls.Add(board);
@@ -28,24 +28,26 @@ namespace Chess
             this.Controls.Add(panel);
 
             panel.Controls.Add(board);
-            var pnl2 = createPanel(board.ClientSize.Height, 0);
+            var pnl2 = createPanel(board.ClientSize.Height,string.Empty);
             panel.Controls.Add(pnl2);
-            pnl2.Controls.Add(createPanel(board.ClientSize.Height/2, 1));
-            pnl2.Controls.Add(createPanel(board.ClientSize.Height / 2, 2));
+            pnl2.Controls.Add(createPanel(board.ClientSize.Height/2, 
+                context.Players[PlayerNo.One].PlayerName ));
+            pnl2.Controls.Add(createPanel(board.ClientSize.Height / 2, 
+                context.Players[PlayerNo.Two].PlayerName));
 
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 
         }
-        private Control createPanel(int height,int player)
+        private Control createPanel(int height,string playerName)
         {
             var panel2 = new FlowLayoutPanel();
             panel2.Size = new Size(50, height);
             panel2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             panel2.BackColor = System.Drawing.Color.Moccasin;
-            if (player != 0)
+            if (!string.IsNullOrEmpty(playerName))
             {
                 var lablel1 = new Label();
-                lablel1.Text = "Player" + player;
+                lablel1.Text = playerName;
                 panel2.Controls.Add(lablel1);
             }
             return panel2;

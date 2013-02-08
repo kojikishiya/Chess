@@ -8,7 +8,7 @@ namespace Chess
     [Serializable]
     class Pawn : KomaBase
     {
-         public Pawn(Color color, int index)
+         public Pawn(PlayerNo color, int index)
              : base(color, index)
          {
 
@@ -25,7 +25,7 @@ namespace Chess
 
         public override List<Tuple<MoveType, int, int>> GetMovableLoacation()
         {
-            int h = MyColor == Color.White ? -1 : 1;
+            int h = Player == PlayerNo.Two ? -1 : 1;
             var list = new List<Tuple<MoveType, int, int>>();
             list.Add(new Tuple<MoveType, int, int>(MoveType.NotExistAny, Left, Height+h));
             list.Add(new Tuple<MoveType, int, int>(MoveType.ExistsEnemy, Left - 1, Height + h));

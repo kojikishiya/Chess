@@ -17,12 +17,11 @@ namespace Chess
     }
      partial class ChessBoard : UserControl
     {
-         BoardManager boardManager = new BoardManager();
+         BoardManager boardManager;
 
          ImageSize komaImageSize;
 
          int PictureSize = 0;
-
          [Browsable(true), Category("ImageSize"), DefaultValue(ImageSize.FortyFive)]
          public ImageSize KomaImageSize
          {
@@ -30,12 +29,12 @@ namespace Chess
              set { komaImageSize = value; }
          }
         
-        public ChessBoard(ImageSize size)
+        public ChessBoard(Context context)
         {
             InitializeComponent();
 
-
-            this.komaImageSize = size;
+            boardManager = new BoardManager(context);
+            this.komaImageSize = context.Size;
             this.PictureSize = getImageSize();
             ClientSize = new Size(PictureSize * 8, PictureSize * 8);
             createKoma();
@@ -97,7 +96,7 @@ namespace Chess
                         boardManager.SetLocation(left, height);
                         if (boardManager.IsKingDead())
                         {
-                            MessageBox.Show(boardManager.GetPlayerColor() + "の勝ち");
+                            MessageBox.Show(boardManager.GetPlayerName() + "の勝ち");
                         }
                         boardManager.ChangePlayer();
                         this.Refresh();

@@ -15,15 +15,15 @@ namespace Chess
         protected int MAX_HEIGHT = 8;
         public Bitmap MyPicture { get; private set; }
         public abstract KomaKind Kind { get;}
-        public Color MyColor { get; private set; }
+        public PlayerNo Player { get; private set; }
         public int Height { get { return Location.Item2; } }
         public int Left { get { return Location.Item1; } }
         public int Index { get; private set; }
         public Tuple<int, int> Location { get; private set; }
         public bool IsDead { get; set; }
-        public KomaBase(Color color, int index)
+        public KomaBase(PlayerNo playerNo, int index)
         {
-            MyColor = color;
+            Player = playerNo;
             Index = index;
 
             CheckIndex();
@@ -56,7 +56,7 @@ namespace Chess
 
         protected T GetObjectByColor<T>(T whiteObject, T blackObject)
         {
-            return MyColor == Color.White ? whiteObject : blackObject;
+            return Player == PlayerNo.Two ? whiteObject : blackObject;
         }
     }
 }

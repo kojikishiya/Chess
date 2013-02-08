@@ -15,10 +15,10 @@ namespace Chess
         Knight,
         Pone
     }
-    enum Color
+    enum PlayerNo
     {
-        Black,
-        White
+        One,
+        Two
     }
     enum MoveType
     {

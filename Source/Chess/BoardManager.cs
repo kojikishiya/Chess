@@ -10,13 +10,13 @@ namespace Chess
     {
         List<KomaBase> komaList = null;
 
-        Color playerColor;
+        PlayerNo playerNo;
         KomaBase clickedKoma;
         List<Tuple<int, int>> movableLoacation = new List<Tuple<int,int>>();
-
-        public BoardManager()
+        Context context;
+        public BoardManager(Context context)
         {
-
+            this.context = context;
         }
 
         public List<KomaBase> KomaCreate()
@@ -31,9 +31,9 @@ namespace Chess
                 int index = 0;
                 while(true)
                 {
-                    var komaKuro = createKoma(komaKind, Color.White, index);
+                    var komaKuro = createKoma(komaKind, PlayerNo.Two, index);
                     komaKuro.SetDefaultPoint();
-                    var komaShiro = createKoma(komaKind, Color.Black, index);
+                    var komaShiro = createKoma(komaKind, PlayerNo.One, index);
                     komaShiro.SetDefaultPoint();
                     komaList.AddRange(new[] { komaKuro, komaShiro });
 
@@ -80,7 +80,7 @@ namespace Chess
         {
             return locationInfos.Where((location) =>
                 location.Item1 == MoveType.Normal
-                && !existsKoma(location.Item2, location.Item3,playerColor))
+                && !existsKoma(location.Item2, location.Item3,playerNo))
                 .Select(location => new Tuple<int, int>(location.Item2, location.Item3));
         }
         private IEnumerable<Tuple< int, int>> getDirection(
@@ -104,7 +104,7 @@ namespace Chess
                         break;
 
                     }
-                    else if(this.existsKoma(left,height,playerColor))
+                    else if(this.existsKoma(left,height,playerNo))
                     {
                         break;
                     }
@@ -145,18 +145,18 @@ namespace Chess
 
                 private bool existsPlayer(int left, int heigth)
         {
-            return this.existsKoma(left,heigth,this.playerColor);
+            return this.existsKoma(left,heigth,this.playerNo);
         }
 
         private bool existsEnemy(int left, int heigth)
         {
-            var color = this.playerColor == Color.White?Color.Black:Color.White;
-            return this.existsKoma(left,heigth,color);
+            var no = this.playerNo == PlayerNo.Two?PlayerNo.One:PlayerNo.Two;
+            return this.existsKoma(left, heigth, no);
         }
-        private bool existsKoma(int left, int heigth,Color komaColor)
+        private bool existsKoma(int left, int heigth,PlayerNo player)
         {
             return this.GetAliveKoma().Where((koma) =>
-            koma.MyColor == komaColor
+            koma.Player == player
             && koma.Left == left
             && koma.Height == heigth).Count() > 0;
         }
@@ -192,22 +192,22 @@ namespace Chess
             return null;
         }
 
-        private KomaBase createKoma(KomaKind kind, Color color, int index)
+        private KomaBase createKoma(KomaKind kind, PlayerNo playerNo, int index)
         {
             switch (kind)
             {
                 case KomaKind.King:
-                    return new King(color, index);
+                    return new King(playerNo, index);
                 case KomaKind.Queen:
-                    return new Queen(color, index);
+                    return new Queen(playerNo, index);
                 case KomaKind.Bishop :
-                    return new Bishop(color,index);
+                    return new Bishop(playerNo,index);
                 case KomaKind.Knight:
-                    return new Knight(color, index);
+                    return new Knight(playerNo, index);
                 case KomaKind.Pone:
-                    return new Pawn(color, index);
+                    return new Pawn(playerNo, index);
                 case KomaKind.Rook:
-                    return new Rook(color,index);
+                    return new Rook(playerNo,index);
                 default:
                     throw new ArgumentException("Unexpected Kind!!");
             }
@@ -244,7 +244,7 @@ namespace Chess
             foreach (var koma in this.GetAliveKoma().Where((koma) =>
                 koma.Left == left &&
                 koma.Height == height &&
-                koma.MyColor != playerColor))
+                koma.Player != playerNo))
             {
                 koma.IsDead = true;
             }
@@ -255,14 +255,14 @@ namespace Chess
         internal bool IsPlayerKoma(int left, int height)
         {
             return this.GetAliveKoma().Where((location) =>
-                 location.MyColor == playerColor
+                 location.Player == playerNo
                  && location.Left == left
                  && location.Height == height).Count() > 0;
         }
 
         internal void ChangePlayer()
         {
-            playerColor = playerColor == Color.White ? Color.Black : Color.White;
+            playerNo = playerNo == PlayerNo.Two ? PlayerNo.One : PlayerNo.Two;
             ClearClickedKoma();
         }
         internal void setClicedKoma(int left, int height)
@@ -285,12 +285,12 @@ namespace Chess
             return this.komaList.Where((koma) =>
                 koma.Kind == KomaKind.King
                 && koma.IsDead
-                && koma.MyColor != playerColor).Count() > 0;
+                && koma.Player != playerNo).Count() > 0;
         }
 
-        internal string GetPlayerColor()
+        internal string GetPlayerName()
         {
-            return playerColor.ToString();
+            return this.context.Players[playerNo].PlayerName;
         }
     }
 

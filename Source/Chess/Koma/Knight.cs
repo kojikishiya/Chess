@@ -8,7 +8,7 @@ namespace Chess
     [Serializable]
     internal class Knight : KomaBase
     {
-        public Knight(Color color, int index)
+        public Knight(PlayerNo color, int index)
             : base(color, index)
          {
 

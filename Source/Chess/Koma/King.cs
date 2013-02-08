@@ -9,7 +9,7 @@ namespace Chess
     [Serializable]
     class King : KomaBase
     {
-        public King(Color color,int index)
+        public King(PlayerNo color,int index)
              : base(color, index)
         {
 

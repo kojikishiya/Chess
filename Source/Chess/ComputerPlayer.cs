@@ -8,8 +8,8 @@ namespace Chess
 {
      class ComputerPlayer
     {
-         private Color cpuColor;
-         public ComputerPlayer(Color cpuColor)
+         private PlayerNo cpuColor;
+         public ComputerPlayer(PlayerNo cpuColor)
          {
              this.cpuColor = cpuColor;
          }

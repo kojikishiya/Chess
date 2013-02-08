@@ -8,7 +8,7 @@ namespace Chess
     [Serializable]
     internal class Bishop : KomaBase
     {
-        public Bishop(Color color, int index)
+        public Bishop(PlayerNo color, int index)
              : base(color, index)
          {
 
