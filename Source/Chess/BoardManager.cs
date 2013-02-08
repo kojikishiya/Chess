@@ -10,7 +10,7 @@ namespace Chess
     {
         List<KomaBase> komaList = null;
 
-        PlayerNo playerNo;
+        PlayerNo playerNo = PlayerNo.Two;
         KomaBase clickedKoma;
         List<Tuple<int, int>> movableLoacation = new List<Tuple<int,int>>();
         Context context;
