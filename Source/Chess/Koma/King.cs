@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
-     class King :KomaBase
+    [Serializable]
+    class King : KomaBase
     {
         public King(Color color,int index)
              : base(color, index)

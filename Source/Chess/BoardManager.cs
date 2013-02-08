@@ -45,6 +45,7 @@ namespace Chess
                 }
             }
 
+
             return komaList;
 
         }

@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Chess
 {
-     class Pawn : KomaBase
+    [Serializable]
+    class Pawn : KomaBase
     {
          public Pawn(Color color, int index)
              : base(color, index)

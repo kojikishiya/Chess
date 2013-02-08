@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Chess
 {
+    [Serializable]
     internal class Bishop : KomaBase
     {
         public Bishop(Color color, int index)

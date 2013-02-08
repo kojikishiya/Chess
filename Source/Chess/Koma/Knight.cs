@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Chess
 {
+    [Serializable]
     internal class Knight : KomaBase
     {
         public Knight(Color color, int index)

@@ -8,6 +8,7 @@ using System.Drawing;
 
 namespace Chess
 {
+    [Serializable]
     abstract class KomaBase
     {
         protected int MAX_LEFT = 8;

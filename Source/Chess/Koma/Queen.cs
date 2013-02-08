@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
+    [Serializable]
     class Queen : KomaBase
     {
         public Queen(Color color, int index)

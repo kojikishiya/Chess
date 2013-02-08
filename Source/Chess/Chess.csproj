@@ -50,6 +50,8 @@
     <Compile Include="ChessBoard.Designer.cs">
       <DependentUpon>ChessBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComputerPlayer.cs" />
+    <Compile Include="KomaListExtention.cs" />
     <Compile Include="Koma\Bishop.cs" />
     <Compile Include="ChessEnums.cs" />
     <Compile Include="Form1.cs">
