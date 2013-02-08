@@ -15,7 +15,7 @@ namespace Chess
             get { return players; }
             set { players = value; }
         }
-        ImageSize size = ImageSize.FortyFive;
+        ImageSize size = ImageSize.Seventy;
 
         internal ImageSize Size
         {

@@ -13,7 +13,8 @@ namespace Chess
     enum ImageSize
     {
         Thirty,
-        FortyFive
+        FortyFive,
+        Seventy
     }
      partial class ChessBoard : UserControl
     {
@@ -134,6 +135,8 @@ namespace Chess
                     return 30;
                 case ImageSize.FortyFive:
                     return 45;
+                case ImageSize.Seventy:
+                    return 70;
                 default:
                     throw new ArgumentException("unexpected ");
             }
