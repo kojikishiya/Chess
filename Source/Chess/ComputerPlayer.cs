@@ -13,13 +13,6 @@ namespace Chess
          {
              this.cpuColor = cpuColor;
          }
-         public Tuple<int, int> Think(BoardManager komaList)
-         {
-
-             var komaListClone = komaList.Clone();
-             komaListClone[new Random().Next(komaListClone.Count() - 1)]
-                 .GetMovableLoacation();
-         }
     }
 
    
